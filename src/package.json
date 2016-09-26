@@ -1,0 +1,22 @@
+{
+  "name": "alexa-interval-timer",
+  "version": "1.0.0",
+  "description": "Interval Timer For Alexa Voice Service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/badcab/alexa-interval-timer.git"
+  },
+  "author": "Michael Spear",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/badcab/alexa-interval-timer/issues"
+  },
+  "homepage": "https://github.com/badcab/alexa-interval-timer#readme",
+  "dependencies": {
+    "alexa-app": "^2.3.4"
+  }
+}
