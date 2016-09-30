@@ -1,14 +1,13 @@
 var alexa = require('alexa-app');
 var app = new alexa.app('Interval');
 
-function getIntervalSpeachString(durration, timesRepeat) {
-
+function getIntervalSpeachString(durration, timesRepeat = 10) {
 	var tens = durration/10;
 	var returnString = "";
 	var pauseString = '<break time="' + (durration % 10) + 's"/>';
 	
 	for(let i=1; i < tens; i++) {
-	  pauseString += '<break time="10s"/>';
+		pauseString += '<break time="10s"/>';
 	}
 	
 	for(i = 0; i < timesRepeat; i++) {
