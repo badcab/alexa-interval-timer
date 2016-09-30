@@ -39,4 +39,4 @@ jspm_packages
 *.workspace
 src/.codelite/*
 src/.tern-port
-
+src/.tern-project
