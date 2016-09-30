@@ -2,11 +2,21 @@ var alexa = require('alexa-app');
 var app = new alexa.app('Interval');
 
 function getIntervalSpeachString(int durration, int timesRepeat) {
-	//set if times not set 
+
+	timesRepeat = (null == timesRepeat) ? 10 : timesRepeat;
+
 	var returnString = "";
+	var pauseString = "";
+
+	while(durration >= 10){
+		pauseString += '<break time="10s"/>';
+		durration -= 10;
+	}
+
+	pauseString += '<break time="' + durration + 's"/>';
+		
 	for(i = 0; i < timesRepeat; i++) {
-		//warning this break might be limited to 10 seconds, might have to get creative
-		returnString += '<break time="3s"/> ' + i;
+		returnString += pauseString + i;
 	}
 	return returnString + '<break time="1s"/> that is the end of your interval training, good bye.';
 }
@@ -16,10 +26,10 @@ app.intent(
 	{}, //@TODO figure out what to put here
 	function(request, response) {
 		//var val = request.data.request.intent.slots.word.value.toLowerCase().replace(/\W/g, '');
+		int durration = 0;
+		int timesRepeat = 0;
 
-		//response.say("Sorry, I don't know what a " + request.data.request.intent.slots.word.value + " is");
-			
-		//loop through the first number and the output should be a pause
+		response.say(getIntervalSpeachString(durration, timesRepeat));
 	}
 );
 
